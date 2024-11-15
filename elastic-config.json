@@ -1,0 +1,163 @@
+{
+  "initial_query": {
+    "size": 10,
+    "from": 0,
+    "fields": [
+      "Fields.author",
+      "Fields.book_title",
+      "Fields.book_series_volume",
+      "Fields.case_name",
+      "Fields.case_number",
+      "Fields.category",
+      "Fields.chunk_title",
+      "Fields.citation",
+      "Fields.city",
+      "Fields.collection_code",
+      "Fields.country",
+      "Fields.decision_date_sortable",
+      "Fields.docid",
+      "Fields.document_number",
+      "Fields.document_types",
+      "Fields.effective_date",
+      "Fields.file_name",
+      "Fields.global_court",
+      "Fields.global_decision_date",
+      "Fields.global_effectdate1",
+      "Fields.global_inforcedate",
+      "Fields.global_jurisdictions",
+      "Fields.global_oecd_art_par",
+      "Fields.global_link",
+      "Fields.global_publishdate",
+      "Fields.global_reviewdate",
+      "Fields.global_rollup_key",
+      "Fields.global_signdate",
+      "Fields.global_status",
+      "Fields.global_terminationdate",
+      "Fields.global_title",
+      "Fields.global_treaty_art_par",
+      "Fields.global_year",
+      "Fields.glossary_suggest",
+      "Fields.ibfd_published",
+      "Fields.ibfd_published_date",
+      "Fields.ibfd_tnsdoc_country",
+      "Fields.ibfd_tnsdoc_date",
+      "Fields.ibfd_tt_effectdate1_s",
+      "Fields.ibfd-tt-inforcedate-s",
+      "Fields.ibfd_tt_signdate_s",
+      "Fields.ibfd-tt-terminationdate-s",
+      "Fields.international_organization",
+      "Fields.issue",
+      "Fields.issuecomplete",
+      "Fields.issuing_authority",
+      "Fields.journal_section",
+      "Fields.keywords",
+      "Fields.language",
+      "Fields.language_code",
+      "Fields.last_modified",
+      "Fields.lcf",
+      "Fields.mli_matching",
+      "Fields.multilateral",
+      "Fields.national_subnational",
+      "Fields.oecd_article",
+      "Fields.open_access",
+      "Fields.open_archive",
+      "Fields.p_content_author_list",
+      "Fields.publication_date",
+      "Fields.qanda",
+      "Fields.references",
+      "Fields.region",
+      "Fields.related_country",
+      "Fields.relative_path",
+      "Fields.review_date",
+      "Fields.reviewdate_sortable",
+      "Fields.search_title",
+      "Fields.series",
+      "Fields.short_title",
+      "Fields.show_in_search_results",
+      "Fields.sort_news_date",
+      "Fields.state_province",
+      "Fields.subcategory",
+      "Fields.summary",
+      "Fields.taxtopic_level1",
+      "Fields.taxtopic_level2",
+      "Fields.taxtopic_level3",
+      "Fields.taxtopic_level4",
+      "Fields.taxtopic_level5",
+      "Fields.toc_section",
+      "Fields.treaty_status",
+      "Fields.treaty_subject",
+      "Fields.uid",
+      "Fields.volume",
+      "Fields.xml_source_file",
+      "Fields.year",
+      "Id",
+      "Text",
+      "Title",
+      "Uri"
+    ],
+    "_source": false,
+    "collapse": {
+      "field": "Fields.global_rollup_key",
+      "inner_hits": {
+        "name": "docs",
+        "size": 20,
+        "fields": [
+          "Title",
+          "Fields.docid",
+          "Fields.relative_path",
+          "Fields.global_title",
+          "Fields.search_title",
+          "Fields.chunk_title",
+          "Fields.short_title"
+        ],
+        "_source": false,
+        "sort": [
+          {
+            "Fields.sortorder": {
+              "order": "asc"
+            }
+          }
+        ]
+      }
+    },
+    "sort": [
+      {
+        "Fields.sort_date_common": {
+          "order": "desc"
+        }
+      }
+    ],
+    "aggs": {
+      "Show in search results": {
+        "terms": {
+          "field": "Fields.show_in_search_results",
+          "size": 4,
+          "min_doc_count": 1
+        }
+      },
+      "Category": {
+        "terms": {
+          "field": "Fields.category",
+          "size": 20,
+          "min_doc_count": 1
+        },
+        "aggs": {
+          "uniq_results": {
+            "cardinality": {
+              "field": "Fields.global_rollup_key",
+              "precision_threshold": 15000
+            }
+          }
+        }
+      }
+    },
+    "query": {
+      "bool": {
+        "must_not": [
+          { "term": { "Fields.show_in_search_results": "n" } },
+          { "term": { "Fields.show_in_search_results": "subs_only" } }
+        ]
+      }
+    }
+  }
+}

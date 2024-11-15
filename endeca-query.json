@@ -1,0 +1,14 @@
+[
+  "N=0+4294967262+4293599279+4294967072&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_news_date|1||sort_country_one|0||sort_country_two|0||file-name|0",
+  "N=0+4293590545+4294703854+4292860482+4292860847+4294967162&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_multilateral|0||sort_country_one|0||sort_country_two|0||sort_organization_one|0||ibfd-tt-signdate-s|1||sort_date_common|1",
+  "N=0+4293599279+4294967232+820+4294961513&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_news_date|1||sort_country_one|0||sort_country_two|0||file-name|0",
+  "N=0+4293599285+4294967072+4293599283&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_country_one|0||subcategory|0||sort_jurisdiction|0||sort_state_province|0",
+  "N=0+4293599285+4294967072+4293599283&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_country_one|0||subcategory|0||sort_jurisdiction|0||sort_state_province|0",
+  "N=0+4293588598+4294967221+823+4074+3558+4294689011+4292860904&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_date_common|1",
+  "N=0+500001+500002+4293590545&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_multilateral|0||sort_country_one|0||sort_country_two|0||sort_organization_one|0||ibfd-tt-signdate-s|1||sort_date_common|1",
+  "N=0&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ntk=Text&Ntt=oecd&Nty=1&Ntx=mode+matchallpartial",
+  "N=0&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ntk=Text&Ntt=belgium%20OR%20oecd&Nty=1&Ntx=mode+matchBoolean",
+  "N=0+4293599279+4294967221+823+510002+510001+4292861054+4292860752&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_news_date|1||sort_country_one|0||sort_country_two|0||file-name|0",
+  "N=0+4293599285+4294967221+4292860752+4292915329&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_country_one|0||subcategory|0||sort_jurisdiction|0||sort_state_province|0",
+  "N=0+4293588598+500001+4294967266+823+4294689011&Ne=7487&Nr=AND(3,10)&Nu=global_rollup_key&Np=2&Ns=sort_date_common|1"
+]
